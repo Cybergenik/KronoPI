@@ -9,6 +9,8 @@ setuptools.setup(
     author="Luciano Remes",
     author_email="cybergenik@gmail.com",
     description="Generates random 4 digit number using user time and date from PI digits",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/Cybergenik/KronoPI",
     packages=setuptools.find_packages(),
     classifiers=[

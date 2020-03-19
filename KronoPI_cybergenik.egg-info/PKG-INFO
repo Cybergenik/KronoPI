@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: KronoPI-cybergenik
+Version: 0.0.1
+Summary: Generates random 4 digit number using user time and date from PI digits
+Home-page: https://github.com/Cybergenik/KronoPI
+Author: Luciano Remes
+Author-email: cybergenik@gmail.com
+License: UNKNOWN
+Description: KronoPI
+        ====
+        Generates 4 random numbers based on users current date and time from digits in PI
+        
+        ### why is it called KronoPI?
+        
+        Named after the Greek God of time Kronos, and PI for PI.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
