@@ -7,5 +7,6 @@ def main():
     assert(DateSum().ret() >= 0)
     assert(TimeSum().ret() >= 0)
     assert(sum() >= 0)
+    print("Tests ran successfully")
     
     
