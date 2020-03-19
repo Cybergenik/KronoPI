@@ -1,6 +1,6 @@
 from kronopi.code_generator import *
 
-def main():
+def gen_test():
     assert(DateSum().ret() <= 142)
     assert(TimeSum().ret() <= 144)
     assert(sum() <= 45)
