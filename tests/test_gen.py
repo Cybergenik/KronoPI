@@ -1,4 +1,4 @@
-from code_generator import *
+from kronopi.code_generator import *
 
 def main():
     assert(DateSum().ret() <= 142)
