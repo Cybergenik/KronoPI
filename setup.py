@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="KronoPI_cybergenik", # Replace with your own username
+    name="KronoPI_cybergenik",
     version="0.0.1",
     author="Luciano Remes",
     author_email="cybergenik@gmail.com",
