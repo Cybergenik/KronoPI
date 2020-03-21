@@ -3,7 +3,7 @@ This runner when invoked will call code_generator.py and
 get the user their current 
 
 """
-from code_generator import gencode
+from .code_generator import gencode
 
 if __name__ == "__main__":
     ns = gencode()
