@@ -1,9 +1,0 @@
-README.md
-setup.py
-KronoPI_cybergenik.egg-info/PKG-INFO
-KronoPI_cybergenik.egg-info/SOURCES.txt
-KronoPI_cybergenik.egg-info/dependency_links.txt
-KronoPI_cybergenik.egg-info/top_level.txt
-kronopi/__init__.py
-kronopi/code_generator.py
-kronopi/runner.py
