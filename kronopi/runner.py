@@ -7,4 +7,4 @@ from code_generator import Kronopi
 
 if __name__ == "__main__":
     kronopi = Kronopi().get_n()
-    print("the 4 digit number is: ", kronopi)
+    print("the 4 digit number is: ", kronopi[0] ," for the timestamp: ", kronopi[1].now())
