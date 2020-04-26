@@ -5,7 +5,7 @@ from decimal import getcontext
 
 class Kronopi():
     MAX = 10000
-    
+
     def date_sum(self, date):
         """
         Returns the sum of the current Date of YY + DD + MM. Using datetime library.
@@ -78,4 +78,4 @@ class Kronopi():
         n_3 = self.n_sum(date)
         n_4 = self.n_mod(n_1, n_2, n_3)
         n = str(self.calcpi(n_1)) + str(self.calcpi(n_2)) + str(self.calcpi(n_3)) + str(self.calcpi(n_4))
-        return n
+        return n , date
