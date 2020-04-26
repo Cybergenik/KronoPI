@@ -10,20 +10,18 @@ class Kronopi():
         """
         Returns the sum of the current Date of YY + DD + MM. Using datetime library.
         """
-        ddate = date.today()
-        n = int(ddate.strftime("%y"))
-        n += int(ddate.strftime("%d"))
-        n += int(ddate.strftime("%m"))
+        n = int(date.strftime("%y"))
+        n += int(date.strftime("%d"))
+        n += int(date.strftime("%m"))
         return n
 
     def time_sum(self, date):
         """
         Returns the sum of the current Time of HH + MM + SS. Using datetime library.
         """
-        tdate = date.now()
-        n = int(tdate.strftime("%y"))
-        n += int(tdate.strftime("%d"))
-        n += int(tdate.strftime("%m"))
+        n = int(date.strftime("%H"))
+        n += int(date.strftime("%M"))
+        n += int(date.strftime("%S"))
         return n
 
     def calcpi(self, n):
@@ -51,8 +49,7 @@ class Kronopi():
         and returning the value.
         """
         n = 0
-        sec = date.now()
-        secmil = sec.strftime('%S%f')
+        secmil = date.strftime('%S%f')
         mapped = list(map(int, secmil))
         del mapped[4:-1]
         
@@ -72,7 +69,7 @@ class Kronopi():
         Generates the 4 digit Random number based on the users current time from digits in PI
         returns 4 number string
         """
-        date = datetime
+        date = datetime.now()
         n_1 = self.date_sum(date)
         n_2 = self.time_sum(date)
         n_3 = self.n_sum(date)
