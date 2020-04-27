@@ -10,18 +10,18 @@ class Kronopi():
         """
         Returns the sum of the current Date of YY + DD + MM. Using datetime library.
         """
-        n = int(date.strftime("%y"))
-        n += int(date.strftime("%d"))
-        n += int(date.strftime("%m"))
+        n = int(str(date.year)[-2:])
+        n += date.day
+        n += date.month
         return n
 
     def time_sum(self, date):
         """
         Returns the sum of the current Time of HH + MM + SS. Using datetime library.
         """
-        n = int(date.strftime("%H"))
-        n += int(date.strftime("%M"))
-        n += int(date.strftime("%S"))
+        n = date.hour
+        n += date.minute
+        n += date.second
         return n
 
     def calcpi(self, n):
@@ -34,13 +34,13 @@ class Kronopi():
         if n == 0:
             return 3
         else:
-            getcontext().prec = n
+            getcontext().prec = n + 5
             pi = D(0)
 
             for k in range(self.MAX):
-                pi += D(math.pow(16, -k)) * (D(4/(8*k+1)) - D(2/(8*k+4)) - D(1/(8*k+5)) - D(1/(8*k+6)))
+                pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D(2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
             
-            pi = int(str(pi)[-1:])
+            pi = int(str(pi)[-5])
         return pi
 
     def n_sum(self, date):
@@ -51,7 +51,7 @@ class Kronopi():
         n = 0
         secmil = date.strftime('%S%f')
         mapped = list(map(int, secmil))
-        del mapped[4:-1]
+        del mapped[4:]
         
         for i in mapped:
             n += i
