@@ -31,7 +31,7 @@ def calcpi(n):
         pi = D(0)
 
         for k in range(MAX):
-            pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D(2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
+            pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D( 2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
     i = 0 
     while i != n:
         if real_pi[i:i+1] != str(pi)[i:i+1]:
