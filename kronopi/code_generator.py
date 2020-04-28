@@ -3,7 +3,7 @@ import math
 from decimal import Decimal as D
 from decimal import getcontext
 
-class Kronopi():
+class Kronopi:
     MAX = 10000
 
     def __init__(self):
