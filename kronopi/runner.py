@@ -1,6 +1,6 @@
 """
-This runner when invoked will call code_generator.py and
-get the user their current 
+Module main call will call code_generator.py, generate the
+4 digit random number from py and print it.
 """
 from code_generator import Kronopi 
 
