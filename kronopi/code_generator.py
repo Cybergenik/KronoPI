@@ -8,7 +8,7 @@ class Kronopi():
 
     def date_sum(self, date):
         """
-        Returns the sum of the current Date of YY + DD + MM. Using datetime library.
+        Returns the sum of the current Date of YY + DD + MM.
         """
         n = int(str(date.year)[-2:])
         n += date.day
@@ -17,7 +17,7 @@ class Kronopi():
 
     def time_sum(self, date):
         """
-        Returns the sum of the current Time of HH + MM + SS. Using datetime library.
+        Returns the sum of the current Time of HH + MM + SS.
         """
         n = date.hour
         n += date.minute
