@@ -25,6 +25,7 @@ class Kronopi:
         #Setting Decimal number to compute pi to
         getcontext().prec = 200
         pi = D(0)
+        # D is Decimal!
         for k in range(self.MAX):
             pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D(2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
         
