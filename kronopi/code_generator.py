@@ -8,40 +8,39 @@ class Kronopi:
 
     def __init__(self):
         self._date = datetime.now()
+        self._pi = self.gen_pi()
+
+    def gen_pi(self):
+        """
+        This function calculates PI to the 200th decimal number, its based on the Chudnovsky Algorithm
+        https://en.wikipedia.org/wiki/Chudnovsky_algorithm
+        the algorithm used is a shorter simplified version, the reason we go to 200 is because the highest
+        number we can get from the users time is 144, and we add a bit of buffer space. Since the algorithm 
+        is procedural and isn't accurate up to the perc number.
+        """
+        #Setting Decimal number to compute pi to
+        getcontext().prec = 200
+        pi = D(0)
+        for k in range(self.MAX):
+            pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D(2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
+        
+        #Removin the dot, so we don't index it    
+        pi = f'{pi}'.replace('.','')
+        
+        return pi
 
     def date_sum(self):
         """
         Returns the sum of the current Date of YY + DD + MM.
         """
-        return int(f'{int(str(self._date.year)[-2:])}{self._date.day}{self._date.month}')
+        return int(str(self._date.year)[-2:]) + self._date.day + self._date.month 
 
     def time_sum(self):
         """
         Returns the sum of the current Time of HH + MM + SS.
         """
 
-        return int(f'{self._date.hour}{self._date.minute}{self._date.second}')
-
-    def calcpi(self, n):
-        """
-        This function calculates PI to the nth number, its based on the Chudnovsky Algorithm
-        https://en.wikipedia.org/wiki/Chudnovsky_algorithm
-        the algorithm used is a shorter simplified version,
-        we add 5 to n because the algorithm is procedural so its sometimes not accurate to the
-        exact precision number, so we add 5 for buffer space.
-        """
-        #Calculate PI
-        if n == 0:
-            return 3
-        else:
-            getcontext().prec = n + 5
-            pi = D(0)
-
-            for k in range(self.MAX):
-                pi += D(math.pow(16, -k)) * (D(4/D(8*k+1)) - D(2/D(8*k+4)) - D(1/D(8*k+5)) - D(1/D(8*k+6)))
-            
-            pi = int(str(pi)[-5])
-        return pi
+        return self._date.hour + self._date.minute + self._date.second
 
     def n_sum(self):
         """
@@ -71,7 +70,7 @@ class Kronopi:
         n_2 = self.time_sum()
         n_3 = self.n_sum()
         n_4 = self.n_mod(n_1, n_2, n_3)
-        n = f'{self.calcpi(n_1)}{self.calcpi(n_2)}{self.calcpi(n_3)}{self.calcpi(n_4)}'
+        n = f'{self._pi[n_1]}{self._pi[n_2]}{self._pi[n_3]}{self._pi[n_4]}'
 
         return n
 
