@@ -1,6 +1,12 @@
 import math
 from decimal import Decimal as D
 from decimal import getcontext
+'''
+This is kind of fucked, but calcpi will test correctly just need to change input to function
+TODO:
+fix test suite
+
+'''
 
 #def gen_test():
     #test = Kronopi()

@@ -28,7 +28,9 @@ class Kronopi():
         """
         This function calculates PI to the nth number, its based on the Chudnovsky Algorithm
         https://en.wikipedia.org/wiki/Chudnovsky_algorithm
-        the algorithm used is a shorter simplified version
+        the algorithm used is a shorter simplified version,
+        we add 5 to n because the algorithm is procedural so its sometimes not accurate to the
+        exact precision number, so we add 5 for buffer space.
         """
         #Calculate PI
         if n == 0:
@@ -45,16 +47,15 @@ class Kronopi():
 
     def n_sum(self, date):
         """
-        This function returns the value of n_3 using seconds milliseconds, adding them
+        This function returns the value of the users seconds milliseconds (12.34), adding them
         and returning the value.
         """
         n = 0
-        secmil = date.strftime('%S%f')
-        mapped = list(map(int, secmil))
-        del mapped[4:]
-        
-        for i in mapped:
-            n += i
+        sec_mil = f'{date.second}{str(date.microsecond)[:2]}' 
+        sec_mil = list(sec_mil)
+
+        for i in sec_mil:
+            n += int(i)
 
         return n
 
@@ -74,5 +75,6 @@ class Kronopi():
         n_2 = self.time_sum(date)
         n_3 = self.n_sum(date)
         n_4 = self.n_mod(n_1, n_2, n_3)
-        n = str(self.calcpi(n_1)) + str(self.calcpi(n_2)) + str(self.calcpi(n_3)) + str(self.calcpi(n_4))
+        n = f'{self.calcpi(n_1)}{self.calcpi(n_2)}{self.calcpi(n_3)}{self.calcpi(n_4)}'
+
         return n , date
