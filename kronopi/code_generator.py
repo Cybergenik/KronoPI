@@ -7,6 +7,9 @@ class Kronopi:
     MAX = 10000
 
     def __init__(self):
+        """
+        Setting Date and PI
+        """
         self._date = datetime.now()
         self._pi = self.gen_pi()
 
@@ -18,6 +21,7 @@ class Kronopi:
         number we can get from the users time is 144, and we add a bit of buffer space. Since the algorithm 
         is procedural and isn't accurate up to the perc number.
         """
+
         #Setting Decimal number to compute pi to
         getcontext().prec = 200
         pi = D(0)
@@ -33,6 +37,7 @@ class Kronopi:
         """
         Returns the sum of the current Date of YY + DD + MM.
         """
+
         return int(str(self._date.year)[-2:]) + self._date.day + self._date.month 
 
     def time_sum(self):
@@ -47,6 +52,7 @@ class Kronopi:
         This function returns the value of the users seconds milliseconds (12.34), adding them
         and returning the value.
         """
+
         n = 0
         sec_mil = f'{self._date.second}{str(self._date.microsecond)[:2]}' 
 
@@ -59,6 +65,7 @@ class Kronopi:
         """
         Takes 3 inputs of the previous ns and returns result of mod 7 on the sum of the 3
         """
+
         return (n1 + n2 + n3) % 7
 
     def get_n(self):
@@ -66,6 +73,7 @@ class Kronopi:
         Generates the 4 digit Random number based on the users current time from digits in PI
         returns 4 number string
         """
+
         #We reinitialize _date because 
         self._date = datetime.now()
         n_1 = self.date_sum()
@@ -77,7 +85,9 @@ class Kronopi:
         return n
 
     def get_date(self):
+
         return self._date
 
     def reset_date(self):
+
         self._date = datetime.now()
