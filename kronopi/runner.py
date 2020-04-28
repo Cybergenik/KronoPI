@@ -4,7 +4,8 @@ get the user their current
 
 """
 from code_generator import Kronopi
+from datetime import datetime 
 
 if __name__ == "__main__":
-    kronopi = Kronopi().get_n()
+    kronopi = Kronopi(datetime.now()).get_n()
     print("the 4 digit number is: ", kronopi[0] ," for the timestamp: ", kronopi[1])

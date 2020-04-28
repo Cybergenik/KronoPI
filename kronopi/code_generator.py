@@ -6,23 +6,21 @@ from decimal import getcontext
 class Kronopi():
     MAX = 10000
 
-    def date_sum(self, date):
+    def __init__(self, date):
+        self._date = date
+
+    def date_sum(self):
         """
         Returns the sum of the current Date of YY + DD + MM.
         """
-        n = int(str(date.year)[-2:])
-        n += date.day
-        n += date.month
-        return n
+        return int(f'{int(str(self._date.year)[-2:])}{self._date.day}{self._date.month}')
 
-    def time_sum(self, date):
+    def time_sum(self):
         """
         Returns the sum of the current Time of HH + MM + SS.
         """
-        n = date.hour
-        n += date.minute
-        n += date.second
-        return n
+
+        return int(f'{self._date.hour}{self._date.minute}{self._date.second}')
 
     def calcpi(self, n):
         """
@@ -45,14 +43,13 @@ class Kronopi():
             pi = int(str(pi)[-5])
         return pi
 
-    def n_sum(self, date):
+    def n_sum(self):
         """
         This function returns the value of the users seconds milliseconds (12.34), adding them
         and returning the value.
         """
         n = 0
-        sec_mil = f'{date.second}{str(date.microsecond)[:2]}' 
-        sec_mil = list(sec_mil)
+        sec_mil = f'{self._date.second}{str(self._date.microsecond)[:2]}' 
 
         for i in sec_mil:
             n += int(i)
@@ -70,11 +67,10 @@ class Kronopi():
         Generates the 4 digit Random number based on the users current time from digits in PI
         returns 4 number string
         """
-        date = datetime.now()
-        n_1 = self.date_sum(date)
-        n_2 = self.time_sum(date)
-        n_3 = self.n_sum(date)
+        n_1 = self.date_sum()
+        n_2 = self.time_sum()
+        n_3 = self.n_sum()
         n_4 = self.n_mod(n_1, n_2, n_3)
         n = f'{self.calcpi(n_1)}{self.calcpi(n_2)}{self.calcpi(n_3)}{self.calcpi(n_4)}'
 
-        return n , date
+        return n , self._date
