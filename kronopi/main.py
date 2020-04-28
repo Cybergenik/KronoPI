@@ -76,7 +76,7 @@ class Kronopi:
         """
 
         #We reinitialize _date because 
-        self._date = datetime.now()
+        #self._date = datetime.now()
         n_1 = self.date_sum()
         n_2 = self.time_sum()
         n_3 = self.n_sum()
