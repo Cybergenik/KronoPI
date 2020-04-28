@@ -6,8 +6,8 @@ from decimal import getcontext
 class Kronopi():
     MAX = 10000
 
-    def __init__(self, date):
-        self._date = date
+    def __init__(self):
+        self._date = datetime.now()
 
     def date_sum(self):
         """
@@ -73,4 +73,10 @@ class Kronopi():
         n_4 = self.n_mod(n_1, n_2, n_3)
         n = f'{self.calcpi(n_1)}{self.calcpi(n_2)}{self.calcpi(n_3)}{self.calcpi(n_4)}'
 
-        return n , self._date
+        return n
+
+    def get_date(self):
+        return self._date
+
+    def reset_date(self):
+        self._date = datetime.now()

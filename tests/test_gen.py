@@ -47,5 +47,5 @@ def calcpi(n):
     pi_num = int(str(pi)[-5])
     return pi_num
 
-n = calcpi(140)
+n = calcpi(1)
 print(n)
