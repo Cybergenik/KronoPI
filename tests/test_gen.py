@@ -8,22 +8,9 @@ fix test suite
 
 '''
 
-#def gen_test():
-    #test = Kronopi()
-    #print(pi)
-    #assert(date_sum() <= 142)
-    #assert(TimeSum().ret() <= 144)
-    #assert(sum() <= 45)
-    #assert(DateSum().ret() >= 0)
-    #assert(TimeSum().ret() >= 0)
-    #assert(sum() >= 0)
-    #print("Tests ran successfully")
-
 def calcpi(n):
     """
-    This function calculates PI to the nth number, its based on the Chudnovsky Algorithm
-    https://en.wikipedia.org/wiki/Chudnovsky_algorithm
-    the algorithm used is a shorter simplified version
+    this is to test my derivation of PI up to 200 characters. It works.
     """
     #Calculate PI
     MAX = 10000
