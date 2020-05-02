@@ -11,6 +11,7 @@ class Kronopi:
         Setting Date and PI
         """
         self._pi = self.gen_pi()
+        self._date = datetime.now()
 
     def gen_pi(self):
         """
@@ -38,7 +39,7 @@ class Kronopi:
         Returns the sum of the current Date of YY + DD + MM.
         """
 
-        return int(str(self._date.year)[-2:]) + self._date.day + self._date.month 
+        return (self._date.year % 100) + self._date.day + self._date.month 
 
     def time_sum(self):
         """
@@ -73,7 +74,7 @@ class Kronopi:
         Generates the 4 digit Random number based on the users current time from digits in PI
         returns 4 number string
         """
-        
+
         self._date = datetime.now()
         n_1 = self.date_sum()
         n_2 = self.time_sum()
@@ -86,7 +87,3 @@ class Kronopi:
     def get_date(self):
 
         return self._date
-
-    def reset_date(self):
-
-        self._date = datetime.now()
